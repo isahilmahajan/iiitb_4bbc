@@ -77,6 +77,6 @@ $   gtkwave updown.vcd
 
 - FGPA4Student: https://www.fpga4student.com/2017/03/verilog-code-for-counter-with-testbench.html
 
-- [^3]: Icarus Verilog - [iverilog](http://iverilog.icarus.com/)
+- Icarus Verilog - [iverilog](http://iverilog.icarus.com/)
 
-- [^4]: GTK Wave [documentation](http://gtkwave.sourceforge.net/gtkwave.pdf)
+- GTK Wave [documentation](http://gtkwave.sourceforge.net/gtkwave.pdf)
