@@ -1,4 +1,4 @@
-# iiitb_6bit_bidirectional_counter
+# iiitb_4bit_bidirectional_counter
 
 
 ## Description
@@ -18,7 +18,7 @@ Bidirectional counter has various applications
 - *Counting the time allotted for special process or event by the scheduler*
 
 ## Bidirectional Counter - Verilog Implementation 
-The digital circuit takes clock, UporDown and reset as input. It operates as 6-bit up counter when UporDown=1 and as 6-bit down counter when UporDown=0. The port description of the Bidirectional counter is shown in Table below. 
+The digital circuit takes clock, UporDown and reset as input. It operates as 4-bit up counter when UporDown=1 and as 4-bit down counter when UporDown=0. The port description of the Bidirectional counter is shown in Table below. 
 
 
 | PORT NAME | PORT TYPE | DESCRIPTION |
@@ -26,7 +26,7 @@ The digital circuit takes clock, UporDown and reset as input. It operates as 6-b
 | clk       | input     | Clock Input |
 | UporDown | input | Specifies the mode of operation (Up / Down) |
 | reset | input | Resets the counter to 0 |
-| count[5:0] | output | 6-bit counter output |
+| count[3:0] | output | 4-bit counter output |
 
 ## About iverilog 
 Icarus Verilog is an implementation of the Verilog hardware description language.
