@@ -13,6 +13,9 @@ Bidirectional counter has various applications
 - *Up Counter*
 - *Down Counter*
 - *Analog to Digital converter*
+- *Self-reversing counter*
+- *Clock Divider circuit*
+- *Counting the time allotted for special process or event by the scheduler*
 
 ## Bidirectional Counter - Verilog Implementation 
 The digital circuit takes clock, UporDown and reset as input. It operates as 6-bit up counter when UporDown=1 and as 6-bit down counter when UporDown=0. The port description of the Bidirectional counter is shown in Table below. 
@@ -63,19 +66,18 @@ $   gtkwave updown.vcd
 
 - Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
 - Madhav Rao, Associate Professor, IIIT Bangalore
-- V N Muralidhara, Associate Professor, IIIT Bangalore
 
 
 ## Contact Information
 
-- Sahil Mahajan, Postgraduate Student, International Institute of Information Technology, Bangalore  1sahil.mahajan@iiitb.ac.in
+- Sahil Mahajan, Postgraduate Student, International Institute of Information Technology, Bangalore  sahil.mahajan@iiitb.ac.in
 - Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. kunalghosh@gmail.com
 
 ## *References*
-[^1]: Varun Akula, Dr. Vishwani D. Agrawal, James J. Danaher. [Comparison of power consumption of 4-bit binary counters with various state encodings including gray and one-hot codes](https://www.eng.auburn.edu/~vagrawal/COURSE/E6270_Spr15/PROJECT/REPORTS/Varun%20Akula%20Project%20Report.pdf). Auburn University
+- Verilogcodes : https://verilogcodes.blogspot.com/2015/10/verilog-code-for-updown-counter-using.html
 
-[^2]: [8-bit Gray Counter](https://www.intel.com/content/www/us/en/support/programmable/support-resources/design-examples/horizontal/ver-gray-counter.html) from INTEL FPGA Support Resources for the verilog design of gray counter.
+- FGPA4Student: https://www.fpga4student.com/2017/03/verilog-code-for-counter-with-testbench.html
 
-[^3]: Icarus Verilog - [iverilog](http://iverilog.icarus.com/)
+- [^3]: Icarus Verilog - [iverilog](http://iverilog.icarus.com/)
 
-[^4]: GTK Wave [documentation](http://gtkwave.sourceforge.net/gtkwave.pdf)
+- [^4]: GTK Wave [documentation](http://gtkwave.sourceforge.net/gtkwave.pdf)
