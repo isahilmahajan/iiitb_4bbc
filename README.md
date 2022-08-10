@@ -55,11 +55,14 @@ $   iverilog iiitb_6bit_bidirectional_counter.v iiitb_6bit_bidirectional_counter
 $   ./a.out
 $   gtkwave updown.vcd
 ```
-## Contributors
+## Author
 
 - **Sahil Mahajan**
-- **Kunal Ghosh**
 
+## Contributors
+
+- **Kunal Ghosh**
+- **Siddhant Nayak**
 
 ## Acknowledgments
 
