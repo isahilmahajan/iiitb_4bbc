@@ -65,7 +65,6 @@ $   gtkwave updown.vcd
 
 
 - Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
-- Madhav Rao, Associate Professor, IIIT Bangalore
 
 
 ## Contact Information
