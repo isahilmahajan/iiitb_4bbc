@@ -49,9 +49,9 @@ $   sudo apt get install iverilog gtkwave
 To clone the Repository and download the Netlist files for Simulation, enter the following commands in your terminal.
 ```
 $   sudo apt install -y git
-$   git clone https://github.com/sanampudig/iiitb_bidicntr
-$   cd iiitb_bidicntr
-$   iverilog iiitb_bidicntr.v iiitb_bidicntr_tb.v
+$   git clone https://github.com/isahilmahajan/iiitb_6bit_bidirectional_counter
+$   cd iiitb_6bit_bidirectional_counter
+$   iverilog iiitb_6bit_bidirectional_counter.v iiitb_6bit_bidirectional_counter_tb.v
 $   ./a.out
 $   gtkwave updown.vcd
 ```
