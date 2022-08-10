@@ -1,10 +1,9 @@
-# iiitb_6bit_updown_counter
+# iiitb_6bit_bidirectional_counter
 
 
 ## Description
 
-Both Synchronous and Asynchronous counters are capable of counting “Up” or counting “Down”, but their is another more “Universal” type of counter that can count in both directions either Up or Down depending on the state of their input control pin and these are known as Bidirectional Counters.
-Bidirectional counters, also known as Up/Down counters, are capable of counting in either direction through any given count sequence and they can be reversed at any point within their count sequence by using an additional control input as shown below.
+Bidirectional counters, also known as Up/Down counters, are capable of counting in either direction through any given count sequence and they can be reversed at any point within their count sequence by using an additional control input as shown in Fig 1.
 
 *Note: Circuit requires further optimization to improve performance. Design yet to be modified.*
 
@@ -16,13 +15,13 @@ Bidirectional counter has various applications
 - *Analog to Digital converter*
 
 ## Bidirectional Counter - Verilog Implementation 
-The digital circuit takes clock, ctrl and reset as input. It operates as  8-bit up counter when ctrl=1 and as  8-bit down cpunter when ctrl=0. The port description of the Bidirectional counter is shown in Table below. 
+The digital circuit takes clock, UporDown and reset as input. It operates as 6-bit up counter when UporDown=1 and as 6-bit down counter when UporDown=0. The port description of the Bidirectional counter is shown in Table below. 
 
 
 | PORT NAME | PORT TYPE | DESCRIPTION |
 |-----------|-----------|-------------|
 | clk       | input     | Clock Input |
-| ctrl | input | to specify whether up or down counter |
+| UporDown | input | Specifies the mode of operation (Up / Down) |
 | reset | input | Resets the counter to 0 |
 | count[5:0] | output | 6-bit counter output |
 
@@ -69,7 +68,7 @@ $   gtkwave updown.vcd
 
 ## Contact Information
 
-- Sahil Mahajan, Postgraduate Student, International Institute of Information Technology, Bangalore  1811pankajagrawal@gmail.com
+- Sahil Mahajan, Postgraduate Student, International Institute of Information Technology, Bangalore  1sahil.mahajan@iiitb.ac.in
 - Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. kunalghosh@gmail.com
 
 ## *References*
