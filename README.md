@@ -10,6 +10,7 @@ Bidirectional counters, also known as Up/Down counters, are capable of counting 
 ## Block Diagram of Bidirectional Counter
 
 ![IMG_20220811_135442](https://user-images.githubusercontent.com/34582183/184093729-d134353f-1a48-41e4-b0da-d7ddbbefc29c.jpg)
+-Fig. 1
 
 ## Truth Table of Bidirectional Counter
 ![IMG_20220811_135338](https://user-images.githubusercontent.com/34582183/184093786-9a4ebfd7-73fd-4841-9102-b3db0f8da19f.jpg)
@@ -59,12 +60,16 @@ $   sudo apt get install iverilog gtkwave
 To clone the Repository and download the Netlist files for Simulation, enter the following commands in your terminal.
 ```
 $   sudo apt install -y git
-$   git clone https://github.com/isahilmahajan/iiitb_6bit_bidirectional_counter
-$   cd iiitb_6bit_bidirectional_counter
-$   iverilog iiitb_6bit_bidirectional_counter.v iiitb_6bit_bidirectional_counter_tb.v
+$   git clone https://github.com/isahilmahajan/iiitb_4bit_bidirectional_counter
+$   cd iiitb_4bit_bidirectional_counter
+$   iverilog iiitb_4bit_bidirectional_counter.v iiitb_4bit_bidirectional_counter_tb.v
 $   ./a.out
 $   gtkwave updown.vcd
 ```
+### Functional Simulation
+![1](https://user-images.githubusercontent.com/34582183/184094914-36c59684-8147-4831-b481-6ea88c7da67e.png)
+
+
 ## Author
 
 - **Sahil Mahajan**
