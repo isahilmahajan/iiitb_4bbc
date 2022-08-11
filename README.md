@@ -62,7 +62,7 @@ To clone the Repository and download the Netlist files for Simulation, enter the
 $   sudo apt install -y git
 $   git clone https://github.com/isahilmahajan/iiitb_4bit_bidirectional_counter
 $   cd iiitb_4bit_bidirectional_counter
-$   iverilog iiitb_4bit_bidirectional_counter.v iiitb_4bit_bidirectional_counter_tb.v
+$   iverilog iiitb_4bit_updown_counter.v iiitb_4bit_updown_counter_tb.v
 $   ./a.out
 $   gtkwave updown.vcd
 ```
