@@ -1,4 +1,4 @@
-# iiitb_4bit_bidirectional_counter
+# iiitb_4bbc --> 4 Bit Bidirectional Counter
 
 
 ## Description
