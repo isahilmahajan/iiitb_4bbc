@@ -7,6 +7,16 @@ Bidirectional counters, also known as Up/Down counters, are capable of counting 
 
 *Note: Circuit requires further optimization to improve performance. Design yet to be modified.*
 
+## Block Diagram of Bidirectional Counter
+
+![IMG_20220811_135442](https://user-images.githubusercontent.com/34582183/184093729-d134353f-1a48-41e4-b0da-d7ddbbefc29c.jpg)
+
+## Truth Table of Bidirectional Counter
+![IMG_20220811_135338](https://user-images.githubusercontent.com/34582183/184093786-9a4ebfd7-73fd-4841-9102-b3db0f8da19f.jpg)
+
+![IMG_20220811_135412](https://user-images.githubusercontent.com/34582183/184093761-fd305f83-74d3-45a4-b068-bb21029ecc5e.jpg)
+
+
 ## Application of Bidirectional Counter
 
 Bidirectional counter has various applications
