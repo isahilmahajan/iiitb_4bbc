@@ -60,14 +60,62 @@ $   sudo apt get install iverilog gtkwave
 To clone the Repository and download the Netlist files for Simulation, enter the following commands in your terminal.
 ```
 $   sudo apt install -y git
-$   git clone https://github.com/isahilmahajan/iiitb_4bit_bidirectional_counter
-$   cd iiitb_4bit_bidirectional_counter
-$   iverilog iiitb_4bit_updown_counter.v iiitb_4bit_updown_counter_tb.v
+$   git clone https://github.com/isahilmahajan/iiitb_4bbc
+$   cd iiitb_4bbc
+$   iverilog iiitb_4bbc.v iiitb_4bbc_tb.v
 $   ./a.out
 $   gtkwave updown.vcd
 ```
 ### Functional Simulation
-![1](https://user-images.githubusercontent.com/34582183/184094914-36c59684-8147-4831-b481-6ea88c7da67e.png)
+
+![pre](https://user-images.githubusercontent.com/34582183/185283568-e24ff700-ce17-47e1-8736-df344b21dc70.png)
+
+
+
+### Synthesis
+The software used to run gate level synthesis is Yosys. Yosys is a framework for Verilog RTL synthesis. It currently has extensive Verilog-2005 support and provides a basic set of synthesis algorithms for various application domains. Yosys can be adapted to perform any synthesis job by combining the existing passes (algorithms) using synthesis scripts and adding additional passes as needed by extending the Yosys C++ code base. [^5]
+
+```
+git clone https://github.com/YosysHQ/yosys.git
+make
+sudo make install make test
+```
+
+The commands to run synthesis in yosys are given below. First create an yosys script `yosys_run.sh` and paste the below commands.
+```
+read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog iiitb_4bbc.v
+synth -top iiitb_4bbc	
+dfflibmap -liberty /home/sahil/iiitb_4bbc/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty /home/sahil/iiitb_4bbc/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+clean
+flatten
+write_verilog iiitb_4bbc_synth.v
+stat
+show
+```
+Then, open terminal in the folder iiitb_gc and type the below command.
+```
+yosys -s yosys_run.sh
+```
+On running the yosys script, we get the following output:
+![Screenshot from 2022-08-16 19-43-49](https://user-images.githubusercontent.com/34582183/185283063-2681ac5d-b794-4b26-947f-725
+![Screenshot from 2022-08-17 23-48-09](https://user-images.githubusercontent.com/34582183/185283153-819cbcd2-6ef3-453a-a9a1-8c46b4e86e12.png)
+f044beaf4.png)
+
+
+
+
+```
+### Gate Level Simulation GLS
+GLS stands for gate level simulation. When we write the RTL code, we test it by giving it some stimulus through the testbench and check it for the desired specifications. Similarly, we run the netlist as the design under test (dut) with the same testbench. Gate level simulation is done to verify the logical correctness of the design after synthesis. Also, it ensures the timing of the design. <br>
+Commands to run the GLS are given below.
+```
+iverilog -DFUNCTIONAL -DUNIT_DELAY=#0 iiitb_4bbc_synth.v iiitb_4bbc_tb.v iiitb_4bbc/verilog_model/primitives.v /iiitb_4bbc/verilog_model/sky130_fd_sc_hd.v -iiitb_4bbc 
+./iiitb_4bbc
+gtkwave iiitb_4bbc.vcd
+
+![post](https://user-images.githubusercontent.com/34582183/185283470-eec5908c-9a4a-44ee-b628-af5ad37390a7.png)
 
 
 ## Author
