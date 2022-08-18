@@ -99,11 +99,9 @@ Then, open terminal in the folder iiitb_gc and type the below command.
 yosys -s yosys_run.sh
 ```
 On running the yosys script, we get the following output:
-![Screenshot from 2022-08-16 19-43-49](https://user-images.githubusercontent.com/34582183/185283063-2681ac5d-b794-4b26-947f-725
+![Screenshot from 2022-08-16 19-43-49](https://user-images.githubusercontent.com/34582183/185283063-2681ac5d-b794-4b26-947f-725f044beaf4.png)
+
 ![Screenshot from 2022-08-17 23-48-09](https://user-images.githubusercontent.com/34582183/185283153-819cbcd2-6ef3-453a-a9a1-8c46b4e86e12.png)
-f044beaf4.png)
-
-
 
 
 ```
