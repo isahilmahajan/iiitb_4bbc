@@ -99,12 +99,12 @@ Then, open terminal in the folder iiitb_gc and type the below command.
 yosys -s yosys_run.sh
 ```
 On running the yosys script, we get the following output:
+
 ![Screenshot from 2022-08-16 19-43-49](https://user-images.githubusercontent.com/34582183/185283063-2681ac5d-b794-4b26-947f-725f044beaf4.png)
 
 ![Screenshot from 2022-08-17 23-48-09](https://user-images.githubusercontent.com/34582183/185283153-819cbcd2-6ef3-453a-a9a1-8c46b4e86e12.png)
 
 
-```
 ### Gate Level Simulation GLS
 GLS stands for gate level simulation. When we write the RTL code, we test it by giving it some stimulus through the testbench and check it for the desired specifications. Similarly, we run the netlist as the design under test (dut) with the same testbench. Gate level simulation is done to verify the logical correctness of the design after synthesis. Also, it ensures the timing of the design. <br>
 Commands to run the GLS are given below.
@@ -112,6 +112,7 @@ Commands to run the GLS are given below.
 iverilog -DFUNCTIONAL -DUNIT_DELAY=#0 iiitb_4bbc_synth.v iiitb_4bbc_tb.v iiitb_4bbc/verilog_model/primitives.v /iiitb_4bbc/verilog_model/sky130_fd_sc_hd.v -iiitb_4bbc 
 ./iiitb_4bbc
 gtkwave iiitb_4bbc.vcd
+```
 
 ![post](https://user-images.githubusercontent.com/34582183/185283470-eec5908c-9a4a-44ee-b628-af5ad37390a7.png)
 
