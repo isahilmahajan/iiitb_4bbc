@@ -244,7 +244,7 @@ $ magic -T /home/jay/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../
 <br>
 Floorplan view <br>
 <br>
-![Screenshot from 2022-09-01 14-44-12](https://user-images.githubusercontent.com/34582183/187883547-68df7ec3-9c14-484b-9b26-7f732fec002d.png)
+![Screenshot from 2022-09-01 14-44-12](https://user-images.githubusercontent.com/34582183/187887088-3403cd57-80ad-47e0-b2d8-c227c8e14864.png)
 <br>
 
 ## Placement
@@ -261,12 +261,15 @@ $ magic -T /home/jay/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../
 <br>
 Placement View <br>
 <br>
-![Screenshot from 2022-09-01 14-43-39](https://user-images.githubusercontent.com/34582183/187884289-7f3a68c7-8d22-4574-a027-5c4450f46cd5.png)
-<br>
+
+![Screenshot from 2022-09-01 14-43-39](https://user-images.githubusercontent.com/34582183/187886869-54a092e3-5496-4f35-8edf-5a377ee9200c.png)
+
 <br>
 <b>sky130_vsdinv</b> in the placement view :<br>
 <br>
-![vsdinv](https://user-images.githubusercontent.com/34582183/187885090-d6e89865-83a6-43ec-a568-f6d9a2645bb2.png)
+
+![vsdinv](https://user-images.githubusercontent.com/34582183/187886929-d25bd7e4-bf4b-45ae-adad-59820216ff4c.png)
+
 <br>
 <br>
 
@@ -298,7 +301,7 @@ Routing View<br>
 ## Viewing Layout in KLayout
 
 <br>
-![klayout](https://user-images.githubusercontent.com/34582183/187885660-e270446c-e8c7-44cc-8254-fabba6952b2b.png)
+![klayout](https://user-images.githubusercontent.com/34582183/187886654-8caed303-803e-4540-a803-6643f717bc64.png)
 <br>
 
 
