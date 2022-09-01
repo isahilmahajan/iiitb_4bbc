@@ -227,7 +227,6 @@ add_lefs -src $lefs
 % run_floorplan
 ```
 
-<br>
 ![floorplan](https://user-images.githubusercontent.com/34582183/187887789-3451d254-b083-4496-bbab-f9a70f4d0461.png)
 <br>
 
@@ -238,8 +237,8 @@ Navigate to results->floorplan and type the Magic command in terminal to open th
 $ magic -T /home/jay/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.nom.lef def read iiitb_4bbc.def &
 ```
 <br>
-Floorplan view <br>
-<br>
+Floorplan view
+
 ![Screenshot from 2022-09-01 14-44-12](https://user-images.githubusercontent.com/34582183/187887088-3403cd57-80ad-47e0-b2d8-c227c8e14864.png)
 <br>
 
