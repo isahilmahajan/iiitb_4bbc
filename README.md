@@ -123,9 +123,9 @@ The layout is generated using OpenLane. To run a custom design on openlane, Navi
 ```
 $ cd designs
 
-$ mkdir iiitb_freqdiv
+$ mkdir iiitb_4bbc
 
-$ cd iiitb_freqdiv
+$ cd iiitb_4bbc
 
 $ mkdir src
 
@@ -133,7 +133,7 @@ $ touch config.json
 
 $ cd src
 
-$ touch iiitb_freqdiv.v
+$ touch iiitb_4bbc.v
 ```
 
 The iiitb_freqdiv.v file should contain the verilog RTL code you have used and got the post synthesis simulation for. <br>
@@ -142,15 +142,16 @@ Copy  `sky130_fd_sc_hd__fast.lib`, `sky130_fd_sc_hd__slow.lib`, `sky130_fd_sc_hd
 
 The final src folder should look like this: <br>
 
-![f2](https://user-images.githubusercontent.com/62461290/187058789-46914626-3965-41c8-8336-cff2ed949889.png) <br>
+
+<br>
 
 The contents of the config.json are as follows. this can be modified specifically for your design as and when required. <br>
 
 As mentioned by kunal sir dont use defined `DIE_AREA` and `FP_SIZING : absolute`, use `FP_SIZING : relative`
 ```
 {
-    "DESIGN_NAME": "iiitb_freqdiv",
-    "VERILOG_FILES": "dir::src/iiitb_freqdiv.v",
+    "DESIGN_NAME": "iiitb_4bbc",
+    "VERILOG_FILES": "dir::src/iiitb_4bbc.v",
     "CLOCK_PORT": "clkin",
     "CLOCK_NET": "clkin",
     "GLB_RESIZER_TIMING_OPTIMIZATIONS": true,
@@ -168,7 +169,7 @@ As mentioned by kunal sir dont use defined `DIE_AREA` and `FP_SIZING : absolute`
     "LIB_FASTEST": "dir::src/sky130_fd_sc_hd__fast.lib",
     "LIB_SLOWEST": "dir::src/sky130_fd_sc_hd__slow.lib",
     "LIB_TYPICAL": "dir::src/sky130_fd_sc_hd__typical.lib",  
-    "TEST_EXTERNAL_GLOB": "dir::../iiitb_freqdiv/src/*"
+    "TEST_EXTERNAL_GLOB": "dir::../iiitb_4bbc/src/*"
 
 
 }
@@ -181,116 +182,94 @@ Save all the changes made above and Navigate to the openlane folder in terminal 
 ```
 $ make mount (if this command doesnot go through prefix it with sudo)
 ```
-![1](https://user-images.githubusercontent.com/62461290/186196147-6c8d37a3-9769-428c-93e2-aefb4c897cf0.png)
+![sm-make mount](https://user-images.githubusercontent.com/34582183/187881647-d856b78b-f4cc-4ef6-8c0f-33fc80be857c.png)
+
 
 After entering the openlane container give the following command:<br>
 ```
 $ ./flow.tcl -interactive
 ```
-![2](https://user-images.githubusercontent.com/62461290/186196149-b595f203-a711-46cc-8949-39bee6de552e.png)
+![tcl](https://user-images.githubusercontent.com/34582183/187881816-c1577234-597b-4231-8d20-8201357022ad.png)
+
 
 This command will take you into the tcl console. In the tcl console type the following commands:<br>
 
 ```
 % package require openlane 0.9
 ```
-![3](https://user-images.githubusercontent.com/62461290/186196154-c3caa53a-1199-45d1-8903-ba7a1f626c96.png)<br>
+![openlane 0 9](https://user-images.githubusercontent.com/34582183/187881881-aabd0933-83e1-42d2-9887-ad7d854bcec3.png)
+<br>
 ```
 % prep -design iiitb_freqdiv
 ```
-![4](https://user-images.githubusercontent.com/62461290/186196159-9444df4e-9580-4a04-ba68-c79190d78863.png)<br>
+![design prep](https://user-images.githubusercontent.com/34582183/187881960-eed36cd7-9fbd-4e0b-8103-ebaed97f8f06.png)
+<br>
 
 The following commands are to merge external the lef files to the merged.nom.lef. In our case sky130_vsdiat is getting merged to the lef file <br>
 ```
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
 add_lefs -src $lefs
 ```
-![f1](https://user-images.githubusercontent.com/62461290/187058441-e4b64b62-d99d-49b6-8ea5-086afed01b75.png) <br>
+![set_lfs](https://user-images.githubusercontent.com/34582183/187882058-80e20ea5-4d7f-49de-bed6-1566a65bffac.png)
 <br>
-The contents of the merged.nom.lef file should contain the Macro definition of sky130_vsdinv <br>
 <br>
-![f3](https://user-images.githubusercontent.com/62461290/187058907-0105481f-b632-4d0c-8d13-40a7f702a10d.png)
 
 ## Synthesis
 ```
 % run_synthesis
 ```
-![5](https://user-images.githubusercontent.com/62461290/186196161-f33eab28-90e1-4697-acf1-cb7f527e00f3.png)<br>
+![run_synthesis](https://user-images.githubusercontent.com/34582183/187882250-33c4c6a6-303a-4978-9fed-0e9b70242d1e.png)
+<br>
 
 ### Synthesis Reports
 Details of the gates used <br>
 <br>
 ![5](https://user-images.githubusercontent.com/62461290/187059146-d8875af6-8feb-4d1a-b908-3fb5c40af428.png)<br>
 <br>
-Setup and Hold Slack after synthesis<br>
-<br>
-![7](https://user-images.githubusercontent.com/62461290/187059191-bc94260c-1867-4167-a6d3-4a2397416b7f.png)<br>
-<br>
-```
-Flop Ratio = Ratio of total number of flip flops / Total number of cells present in the design = 8/71 = 0.1125
-```
-<br>
-The sky130_vsdinv should also reflect in your netlist after synthesis <br>
-<br>
-
-![9](https://user-images.githubusercontent.com/62461290/187059397-9d745276-f506-45cb-a62f-c369a165e8e9.png)
 
 
 ## Floorplan
 ```
 % run_floorplan
 ```
-![10](https://user-images.githubusercontent.com/62461290/187059432-528152fe-2ec3-4aea-9045-1a5187dc7266.png)<br>
+![floorplan](https://user-images.githubusercontent.com/34582183/187882892-6b9684f7-2e9b-4659-b0db-46eb55ca8d8c.png)
+<br>
 
 ### Floorplan Reports
-Die Area <br>
-<br>
-![12 die](https://user-images.githubusercontent.com/62461290/187059493-d33c91d9-d238-4e9c-8a53-0f4a0b6fa40b.png)<br>
-<br>
-Core Area <br>
-<br>
-![11 core](https://user-images.githubusercontent.com/62461290/187059503-233981d6-baf2-46c5-b8e6-979e18baf189.png)<br>
 
 Navigate to results->floorplan and type the Magic command in terminal to open the floorplan <br>
 ```
-$ magic -T /home/nandu/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.nom.lef def read iiitb_freqdiv.def &
+$ magic -T /home/jay/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.nom.lef def read iiitb_4bbc.def &
 ```
-![14](https://user-images.githubusercontent.com/62461290/187059593-bdf6b441-9cb8-4838-a2a0-5638af1c7c02.png)<br>
 <br>
 Floorplan view <br>
 <br>
-![13](https://user-images.githubusercontent.com/62461290/187059569-1b8184d1-47e1-4ec3-9539-17e317aedacb.png)<br>
+![Screenshot from 2022-09-01 14-44-12](https://user-images.githubusercontent.com/34582183/187883547-68df7ec3-9c14-484b-9b26-7f732fec002d.png)
 <br>
-All the cells are placed in the left corner of the floorplan<br>
-<br>
-![15](https://user-images.githubusercontent.com/62461290/187059629-b135d6dd-dd77-4a0d-a322-6c8864a6210c.png)
 
 ## Placement
 ```
 % run_placement
 ```
-![16](https://user-images.githubusercontent.com/62461290/187059712-d8940d40-04f7-4eac-acf6-24ee71c79103.png)<br>
+![placement](https://user-images.githubusercontent.com/34582183/187883674-ff4d2cfb-90e6-4416-8955-37845de00c92.png)
 
 ### Placement Reports
 Navigate to results->placement and type the Magic command in terminal to open the placement view <br>
 ```
-$ magic -T /home/nandu/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_freqdiv.def &
+$ magic -T /home/jay/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_4bbc.def &
 ```
-![19](https://user-images.githubusercontent.com/62461290/187059871-7f4746b1-87ec-40fb-827b-e76df64e3e3d.png)<br>
 <br>
 Placement View <br>
 <br>
-![17](https://user-images.githubusercontent.com/62461290/187059887-35c59d00-b959-4983-97f7-f229db63ca4b.png)<br>
+![Screenshot from 2022-09-01 14-43-39](https://user-images.githubusercontent.com/34582183/187884289-7f3a68c7-8d22-4574-a027-5c4450f46cd5.png)
 <br>
-![Screenshot 2022-08-28 112324](https://user-images.githubusercontent.com/62461290/187059896-3cd7613c-abdd-4838-81dc-0291a7a63241.png)<br>
 <br>
 <b>sky130_vsdinv</b> in the placement view :<br>
 <br>
-![18](https://user-images.githubusercontent.com/62461290/187059910-27dc9f35-9a5c-4518-8dc5-7c8238747b57.png)<br>
+![vsdinv](https://user-images.githubusercontent.com/34582183/187885090-d6e89865-83a6-43ec-a568-f6d9a2645bb2.png)
 <br>
-The sky130_vsdinv should also reflect in your netlist after placement <br>
 <br>
-![20](https://user-images.githubusercontent.com/62461290/187060017-d9e3eb1b-2cf6-4056-b7e8-4f9afd9daa5b.png)<br>
+
 
 ## Clock Tree Synthesis
 ```
@@ -307,56 +286,30 @@ The sky130_vsdinv should also reflect in your netlist after placement <br>
 ### Routing Reports
 Navigate to results->routing and type the Magic command in terminal to open the routing view <br>
 ```
-$ magic -T /home/nandu/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.nom.lef def read iiitb_freqdiv.def &
+$ magic -T /home/jay/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.nom.lef def read iiitb_4bbc.def &
 ```
-![23](https://user-images.githubusercontent.com/62461290/187060186-ec8a606b-9f79-4bb4-b0fe-5088fed426bb.png)<br>
-<br>
+
 Routing View<br>
 <br>
-![24](https://user-images.githubusercontent.com/62461290/187060219-d3194c75-d7b6-44c8-b760-19688209ca30.png)<br>
+![Screenshot from 2022-09-01 14-42-58](https://user-images.githubusercontent.com/34582183/187885465-81e2751d-2477-4aa9-bd73-a4c723aa577e.png)
 <br>
-![25](https://user-images.githubusercontent.com/62461290/187060241-5e1341a4-0293-4957-aded-f30660d226e2.png)<br>
 <br>
-<b>sky130_vsdinv</b> in the routing view :<br>
-<br>
-![26](https://user-images.githubusercontent.com/62461290/187060280-5f093b87-366e-4355-a506-aa140022c78a.png)<br>
-<br>
-Area report by magic :<br>
-<br>
-![27](https://user-images.githubusercontent.com/62461290/187060331-cb12a7ce-963a-420e-9b38-12f137c11e9c.png)<br>
-<br>
-The sky130_vsdinv should also reflect in your netlist after routing <br>
-<br>
-![28](https://user-images.githubusercontent.com/62461290/187060367-db21b544-21b1-4447-9756-bc7aa947d23d.png)<br>
 
 ## Viewing Layout in KLayout
 
-![klayou1](https://user-images.githubusercontent.com/62461290/187060556-280c7dc4-0f2f-4c0b-aac3-eec6d542ee06.png) <br>
-
-![klayout2](https://user-images.githubusercontent.com/62461290/187060558-73bbc257-a068-4a11-9cf8-f91d2556b72f.png)<br>
-
-![klayout3](https://user-images.githubusercontent.com/62461290/187060560-52d90a53-e509-4319-ae06-3781c246f384.png)<br>
+<br>
+![klayout](https://user-images.githubusercontent.com/34582183/187885660-e270446c-e8c7-44cc-8254-fabba6952b2b.png)
+<br>
 
 
 ### NOTE
 We can also run the whole flow at once instead of step by step process by giving the following command in openlane container<br>
 ```
-$ ./flow.tcl -design iiitb_freqdiv
+$ ./flow.tcl -design iiitb_4bbc
 ```
-![100](https://user-images.githubusercontent.com/62461290/186196145-6850e928-d54a-404d-ad30-1fdb124a883b.png)<br>
+<br>![non-interactive command](https://user-images.githubusercontent.com/34582183/187885803-ca195cac-b0aa-4416-921e-26031b77a9de.png)
 <br>
 All the steps will be automated and all the files will be generated.<br>
-
-we can open the mag file and view the layout after the whole process by the following command, you can follow the path as per the image.<br>
-
-```
-$ magic -T /home/nandu/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech iiitb_freqdiv.mag &
-```
-<br>
-
-![30](https://user-images.githubusercontent.com/62461290/186206184-3f146947-84d9-4178-9dd2-c54330067168.png)<br>
-![31](https://user-images.githubusercontent.com/62461290/186206194-4ea81f2f-ab7f-4d34-840d-7aabff547774.png)<br>
-![32](https://user-images.githubusercontent.com/62461290/186206196-526af125-b092-4bfc-9025-33dad27a3e6e.png)<br>
 
 
 ## Author
