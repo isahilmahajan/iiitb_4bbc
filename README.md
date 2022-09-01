@@ -223,11 +223,12 @@ add_lefs -src $lefs
 
 ## Floorplan
 ```
+
 % run_floorplan
 ```
 
 <br>
-![Screenshot from 2022-09-01 14-44-12](https://user-images.githubusercontent.com/34582183/187887437-e8b3a303-c444-4666-b20d-fa181803824d.png)
+![floorplan](https://user-images.githubusercontent.com/34582183/187887789-3451d254-b083-4496-bbab-f9a70f4d0461.png)
 <br>
 
 ### Floorplan Reports
