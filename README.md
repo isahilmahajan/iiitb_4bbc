@@ -221,18 +221,13 @@ add_lefs -src $lefs
 ![run_synthesis](https://user-images.githubusercontent.com/34582183/187882250-33c4c6a6-303a-4978-9fed-0e9b70242d1e.png)
 <br>
 
-### Synthesis Reports
-Details of the gates used <br>
-<br>
-![5](https://user-images.githubusercontent.com/62461290/187059146-d8875af6-8feb-4d1a-b908-3fb5c40af428.png)<br>
-<br>
-
-
 ## Floorplan
 ```
 % run_floorplan
 ```
-![floorplan](https://user-images.githubusercontent.com/34582183/187882892-6b9684f7-2e9b-4659-b0db-46eb55ca8d8c.png)
+
+<br>
+![Screenshot from 2022-09-01 14-44-12](https://user-images.githubusercontent.com/34582183/187887437-e8b3a303-c444-4666-b20d-fa181803824d.png)
 <br>
 
 ### Floorplan Reports
