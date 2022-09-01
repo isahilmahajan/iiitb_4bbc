@@ -234,7 +234,7 @@ add_lefs -src $lefs
 
 Navigate to results->floorplan and type the Magic command in terminal to open the floorplan <br>
 ```
-$ magic -T /home/jay/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.nom.lef def read iiitb_4bbc.def &
+$ magic -T /home/himanshu/Sahil/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.nom.lef def read iiitb_4bbc.def &
 ```
 <br>
 Floorplan view
@@ -251,7 +251,7 @@ Floorplan view
 ### Placement Reports
 Navigate to results->placement and type the Magic command in terminal to open the placement view <br>
 ```
-$ magic -T /home/jay/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_4bbc.def &
+$ magic -T /home/himanshu/Sahil/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_4bbc.def &
 ```
 <br>
 Placement View <br>
@@ -284,7 +284,7 @@ Placement View <br>
 ### Routing Reports
 Navigate to results->routing and type the Magic command in terminal to open the routing view <br>
 ```
-$ magic -T /home/jay/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.nom.lef def read iiitb_4bbc.def &
+$ magic -T /home/himanshu/Sahil/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.nom.lef def read iiitb_4bbc.def &
 ```
 
 Routing View<br>
@@ -295,7 +295,6 @@ Routing View<br>
 
 ## Viewing Layout in KLayout
 
-<br>
 ![klayout](https://user-images.githubusercontent.com/34582183/187886654-8caed303-803e-4540-a803-6643f717bc64.png)
 <br>
 
