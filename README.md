@@ -326,8 +326,8 @@ All the steps will be automated and all the files will be generated.<br>
 ## 3. Performance
 
 ![timing_commands_3](https://user-images.githubusercontent.com/34582183/192609146-d94738be-49bf-4bd8-845a-aa4f1b028e49.png)
+![timing_3](https://user-images.githubusercontent.com/34582183/192612836-64b38f9f-f6d9-45ee-a6de-dfee04cb26b2.png)
 
-![timing](https://user-images.githubusercontent.com/34582183/192609274-f2664ca0-e580-4fb7-b63b-18f22b1051b7.png)
 
 
 **performance = 1/(clock period-slack = 1/(10-7.16)ps =352.112GHz)**
