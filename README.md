@@ -309,6 +309,41 @@ $ ./flow.tcl -design iiitb_4bbc
 All the steps will be automated and all the files will be generated.<br>
 
 
+# Post Layout Results
+## 1. gate count 
+
+![flop_ratio](https://user-images.githubusercontent.com/34582183/192608770-7e40a78f-3ee2-4c15-bea3-3b4c5aded309.png)
+
+
+**Gate count = 24**
+
+## 2. Area
+
+![box_4](https://user-images.githubusercontent.com/34582183/192609037-30fabf25-4e57-4098-bc9e-dcb207c03a7e.png)
+
+
+**Area = 2486.293 um^2**
+## 3. Performance
+
+![timing_commands_3](https://user-images.githubusercontent.com/34582183/192609146-d94738be-49bf-4bd8-845a-aa4f1b028e49.png)
+
+![timing](https://user-images.githubusercontent.com/34582183/192609274-f2664ca0-e580-4fb7-b63b-18f22b1051b7.png)
+
+
+**performance = 1/(clock period-slack = 1/(10-7.16)ps =352.112GHz)**
+## 4. Flop/standard cell 
+
+![flop_ratio_2](https://user-images.githubusercontent.com/34582183/192609955-92d5c73c-3e6f-4611-99ad-c8758ac47ec0.png)
+
+
+**Flop ratio = 6/24 = 0.25**
+
+## 5. Power Performance 
+
+
+![power](https://user-images.githubusercontent.com/34582183/192609443-34367761-9cdc-4ce5-9da3-c5222a9c621c.png)
+
+
 ## Author
 
 - **Sahil Mahajan**
