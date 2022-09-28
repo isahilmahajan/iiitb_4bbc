@@ -325,9 +325,8 @@ All the steps will be automated and all the files will be generated.<br>
 **Area = 2486.293 um^2**
 ## 3. Performance
 
-![timing_commands_3](https://user-images.githubusercontent.com/34582183/192609146-d94738be-49bf-4bd8-845a-aa4f1b028e49.png)
-![timing_3](https://user-images.githubusercontent.com/34582183/192612836-64b38f9f-f6d9-45ee-a6de-dfee04cb26b2.png)
-
+![timing_commands](https://user-images.githubusercontent.com/34582183/192780203-11c55a89-f995-4ec3-8fa3-c7e74d345d06.png)
+![timing](https://user-images.githubusercontent.com/34582183/192780220-2baa3d0c-6b12-4283-a972-38ac4aceeef7.png)
 
 
 **performance = 1/(clock period-slack = 1/(10-7.16)ps =352.112GHz)**
@@ -342,6 +341,7 @@ All the steps will be automated and all the files will be generated.<br>
 
 
 ![power](https://user-images.githubusercontent.com/34582183/192609443-34367761-9cdc-4ce5-9da3-c5222a9c621c.png)
+**Total Power = 87.6 uW**
 
 
 ## Author
